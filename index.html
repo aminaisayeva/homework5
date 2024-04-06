@@ -14,7 +14,7 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
+                    <th scope="col">First Name</th>
                     <th scope="col">City</th>
                 </tr>
             </thead>
@@ -23,23 +23,6 @@
             </tbody>
         </table>
     </div>
-    <script>
-        fetch('https://randomuser.me/api/?results=5')
-            .then(response => response.json())
-            .then(data => {
-                const users = data.results;
-                const tableBody = document.getElementById('userTable');
-                users.forEach((user, index) => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <th scope="row">${index + 1}</th>
-                        <td>${user.name.first}</td>
-                        <td>${user.location.city}</td>
-                    `;
-                    tableBody.appendChild(tr);
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
